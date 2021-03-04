@@ -65,7 +65,7 @@ const IndexPage = () => {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <a
             className="button"
-            href="https://exchange.pancakeswap.finance/#/swap"
+            href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x8C0B2ecc326678FAa406D717d89335A32aEf3540"
           >
             Trade ZFUN at PancakeSwap
           </a>
