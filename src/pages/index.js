@@ -1,5 +1,6 @@
 import * as React from "react";
 import logo from "../images/logo.svg";
+import { Helmet } from "react-helmet";
 
 import { FiCheck, FiTrendingUp, FiCalendar } from "react-icons/fi";
 import "./styles.css";
@@ -59,6 +60,13 @@ const ColumnItem = ({ icon, title, data }) => {
 const IndexPage = () => {
   return (
     <>
+      <Helmet>
+        <title>0Fundamentals | Who cares about fundamentals in crypto?</title>
+        <meta
+          name="description"
+          content="Who cares about fundamentals in crypto? Trade the 0Fundamentals (ZFUN) token"
+        />
+      </Helmet>
       <BgImg
         // src={bgg}
         style={{
