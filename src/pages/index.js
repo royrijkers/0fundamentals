@@ -63,7 +63,10 @@ const IndexPage = () => {
         </div>
         <h2 style={{ textAlign: "center" }}>Where are you waiting for?</h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <a className="button" href="">
+          <a
+            className="button"
+            href="https://exchange.pancakeswap.finance/#/swap"
+          >
             Trade ZFUN at PancakeSwap
           </a>
         </div>
