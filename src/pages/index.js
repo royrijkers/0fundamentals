@@ -1,13 +1,35 @@
-import * as React from "react"
-import { createTheme, ThemeProvider, Arwes } from "arwes";
-import logo from "../images/logo.svg"
-import bgg from "../images/bgg.png"
-import { FiCheck, FiTrendingUp, FiCalendar } from "react-icons/fi";
-import "./styles.css"
-const theme = createTheme({
-});
+import * as React from "react";
+import logo from "../images/logo.svg";
 
-const ColumnItem = ({icon, title}) => {
+import { FiCheck, FiTrendingUp, FiCalendar } from "react-icons/fi";
+import "./styles.css";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+
+const BgImg = (props) => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "bgg.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <Img
+      objectFit="cover"
+      fluid={data.file.childImageSharp.fluid}
+      {...props}
+      alt=""
+    ></Img>
+  );
+};
+
+const ColumnItem = ({ icon, title, data }) => {
   return (
     <div
       style={{
@@ -19,23 +41,38 @@ const ColumnItem = ({icon, title}) => {
       }}
     >
       <div
-        style={{
-          // display: "flex",
-          // flexDirection: "column",
-          // alignContent: "center",
-        }}
+        style={
+          {
+            // display: "flex",
+            // flexDirection: "column",
+            // alignContent: "center",
+          }
+        }
       >
         {icon}
       </div>
       <h3 style={{ textAlign: "center" }}>{title}</h3>
     </div>
   );
-}
+};
 
 const IndexPage = () => {
   return (
     <>
-      <img src={bgg} style={{position:"fixed", bottom: 0, left:0, right:0, top:0, height: "100vh", objectFit:"cover", width: "100%", zIndex: -2}}></img>
+      <BgImg
+        // src={bgg}
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+          height: "100vh",
+          objectFit: "cover",
+          width: "100%",
+          zIndex: -2,
+        }}
+      ></BgImg>
 
       <main style={{ padding: "40px" }}>
         <div
@@ -98,6 +135,6 @@ const IndexPage = () => {
       </footer>
     </>
   );
-}
+};
 
-export default IndexPage
+export default IndexPage;
