@@ -1,111 +1,95 @@
 import * as React from "react"
+import { createTheme, ThemeProvider, Arwes } from "arwes";
+import logo from "../images/logo.svg"
+import { FiCheck, FiTrendingUp } from "react-icons/fi";
+import "./styles.css"
+const theme = createTheme({
+});
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
+const ColumnItem = ({icon, title}) => {
+  return (
+    <div
+      style={{
+        flex: 1,
+        width: "33%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          // display: "flex",
+          // flexDirection: "column",
+          // alignContent: "center",
+        }}
+      >
+        {icon}
+      </div>
+      <h3 style={{ textAlign: "center" }}>{title}</h3>
+    </div>
+  );
 }
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-]
-
-// markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        0Fundamentals
-      </h1>
-    </main>
-  )
+    <>
+      <main style={{ padding: "40px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <img className="logo" src={logo} style={{}} />
+        </div>
+        <div
+          style={{ display: "flex", marginTop: "90px" }}
+          className="columnOrRow"
+        >
+          <ColumnItem
+            icon={<FiCheck size="5em" />}
+            title="No working product"
+          ></ColumnItem>
+          <ColumnItem
+            icon={<FiTrendingUp size="5em" />}
+            title="No Whitepaper"
+          ></ColumnItem>
+          <ColumnItem
+            icon={<FiTrendingUp size="5em" />}
+            title="Not many future plans"
+          ></ColumnItem>
+        </div>
+        <h2 style={{ textAlign: "center" }}>Where are you waiting for?</h2>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <a className="button" href="">
+            Trade ZFUN at PancakeSwap
+          </a>
+        </div>
+        <h2 style={{ marginTop: "60px" }}>Roadmap</h2>
+        <ul>
+          <li>
+            <p>2021 Q1</p>
+            <p>Hmmm... not sure</p>
+          </li>
+          <li>
+            <p>2021 Q2</p>
+            <p>Not much</p>
+          </li>
+          <li>
+            <p>2021 Q3</p>
+            <p>Wait for Q4</p>
+          </li>
+        </ul>
+      </main>
+      <footer>
+        <p style={{ textAlign: "center" }}>
+          ©️2021 0Fundamentals. All rights reserved
+        </p>
+      </footer>
+    </>
+  );
 }
 
 export default IndexPage
