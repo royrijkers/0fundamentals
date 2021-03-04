@@ -1,7 +1,8 @@
 import * as React from "react"
 import { createTheme, ThemeProvider, Arwes } from "arwes";
 import logo from "../images/logo.svg"
-import { FiCheck, FiTrendingUp } from "react-icons/fi";
+import bgg from "../images/bgg.png"
+import { FiCheck, FiTrendingUp, FiCalendar } from "react-icons/fi";
 import "./styles.css"
 const theme = createTheme({
 });
@@ -34,6 +35,8 @@ const ColumnItem = ({icon, title}) => {
 const IndexPage = () => {
   return (
     <>
+      <img src={bgg} style={{position:"fixed", bottom: 0, left:0, right:0, top:0, height: "100vh", objectFit:"cover", width: "100%", zIndex: -2}}></img>
+
       <main style={{ padding: "40px" }}>
         <div
           style={{
@@ -45,7 +48,7 @@ const IndexPage = () => {
           <img className="logo" src={logo} style={{}} />
         </div>
         <div
-          style={{ display: "flex", marginTop: "90px" }}
+          style={{ display: "flex", marginTop: "110px" }}
           className="columnOrRow"
         >
           <ColumnItem
@@ -57,11 +60,13 @@ const IndexPage = () => {
             title="No Whitepaper"
           ></ColumnItem>
           <ColumnItem
-            icon={<FiTrendingUp size="5em" />}
+            icon={<FiCalendar size="5em" />}
             title="Not many future plans"
           ></ColumnItem>
         </div>
-        <h2 style={{ textAlign: "center" }}>Where are you waiting for?</h2>
+        <h2 style={{ textAlign: "center", marginTop: "90px" }}>
+          Where are you waiting for?
+        </h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <a
             className="button"
