@@ -1,6 +1,7 @@
 import * as React from "react";
 import logo from "../images/logo.svg";
 import { Helmet } from "react-helmet";
+import { ImTelegram } from "react-icons/im";
 
 import { FiCheck, FiTrendingUp, FiCalendar } from "react-icons/fi";
 import "./styles.css";
@@ -61,6 +62,7 @@ const IndexPage = () => {
   return (
     <>
       <Helmet>
+        <html lang="en" />
         <title>0Fundamentals | Who cares about fundamentals in crypto?</title>
         <meta
           name="description"
@@ -90,7 +92,12 @@ const IndexPage = () => {
             justifyContent: "center",
           }}
         >
-          <img className="logo" src={logo} style={{}} />
+          <img
+            alt="0Fundamentals logo"
+            className="logo"
+            src={logo}
+            style={{}}
+          />
         </div>
         <div
           style={{ display: "flex", marginTop: "110px" }}
