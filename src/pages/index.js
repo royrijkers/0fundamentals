@@ -117,7 +117,7 @@ const IndexPage = () => {
           ></ColumnItem>
         </div>
         <h2 style={{ textAlign: "center", marginTop: "90px" }}>
-          Where are you waiting for?
+          What are you waiting for?
         </h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <a
